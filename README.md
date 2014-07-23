@@ -4,6 +4,8 @@ Solr-4.9.0-UniversitySearch-Demo
 This is a demo application on how to setup a Solr Search engine using Solr-4.9.0. Being part of the Solr user group and have contributed to the solr wiki page, I'm a huge advocate of this technology. This demo illustrates how to search against a list of universities along with how to load data from a csv file. It by no means, illustrates all the different types of searches or features that Solr provides. For that I recommend the Solr Wiki as a good reference. https://wiki.apache.org/solr/
 The university data that I used was provided free under a Creative Commons Attribution-ShareAlike 3.0 Unported License: http://seanlahman.com/baseball-archive/statistics/ . This data was used for the sole purpose demo the Search engine. If you intend to learn Solr, I would recommend experimenting with various types of data and joining the developer user group.
 
+Author: Michael Labib . 
+
 ##Getting Started
 Clone Solr-4.9.0-UniversitySearch-Demo
 
