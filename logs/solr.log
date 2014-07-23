@@ -1,0 +1,792 @@
+INFO  - 2014-07-22 17:10:13.896; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-22 17:10:13.911; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts at interval 0
+INFO  - 2014-07-22 17:10:13.927; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts\solr-jetty-context.xml
+INFO  - 2014-07-22 17:10:15.580; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-22 17:10:15.674; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-22 17:10:15.690; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-22 17:10:15.690; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr-home
+INFO  - 2014-07-22 17:10:15.690; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr-home\'
+INFO  - 2014-07-22 17:10:15.830; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr-home\solr.xml
+INFO  - 2014-07-22 17:10:15.846; org.apache.solr.core.ConfigSolr; C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr-home\solr.xml does not exist, using default configuration
+INFO  - 2014-07-22 17:10:15.970; org.apache.solr.core.CoreContainer; New CoreContainer 740605477
+INFO  - 2014-07-22 17:10:15.970; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr-home\]
+INFO  - 2014-07-22 17:10:15.986; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-22 17:10:15.986; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: null
+INFO  - 2014-07-22 17:10:15.986; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-22 17:10:15.986; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-22 17:10:16.002; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-22 17:10:16.002; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-22 17:10:16.002; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-22 17:10:16.002; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-22 17:10:16.002; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-22 17:10:16.158; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-22 17:10:16.173; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-22 17:10:16.173; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-22 17:10:16.220; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr-home\collection1\'
+ERROR - 2014-07-22 17:10:16.236; org.apache.solr.core.CoreContainer; Unable to create core: collection1
+org.apache.solr.common.SolrException: Could not load core configuration for core collection1
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:554)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:261)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:253)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr-home\collection1\solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:79)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 9 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or 'C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr-home\collection1\conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 11 more
+ERROR - 2014-07-22 17:10:16.251; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: Unable to create core: collection1
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:911)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:568)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:261)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:253)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.solr.common.SolrException: Could not load core configuration for core collection1
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:66)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:554)
+	... 8 more
+Caused by: org.apache.solr.common.SolrException: Error loading solr config from solr-home\collection1\solrconfig.xml
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:148)
+	at org.apache.solr.core.ConfigSetService.createSolrConfig(ConfigSetService.java:79)
+	at org.apache.solr.core.ConfigSetService.getConfig(ConfigSetService.java:61)
+	... 9 more
+Caused by: java.io.IOException: Can't find resource 'solrconfig.xml' in classpath or 'C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr-home\collection1\conf'
+	at org.apache.solr.core.SolrResourceLoader.openResource(SolrResourceLoader.java:362)
+	at org.apache.solr.core.SolrResourceLoader.openConfig(SolrResourceLoader.java:308)
+	at org.apache.solr.core.Config.<init>(Config.java:116)
+	at org.apache.solr.core.Config.<init>(Config.java:86)
+	at org.apache.solr.core.SolrConfig.<init>(SolrConfig.java:161)
+	at org.apache.solr.core.SolrConfig.readFromResourceLoader(SolrConfig.java:144)
+	... 11 more
+
+INFO  - 2014-07-22 17:10:16.267; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example
+INFO  - 2014-07-22 17:10:16.267; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-22 17:10:16.298; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:10:20.900; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+WARN  - 2014-07-22 17:10:20.900; org.eclipse.jetty.server.AbstractConnector$Acceptor; 
+java.lang.NullPointerException
+	at org.eclipse.jetty.server.bio.SocketConnector.accept(SocketConnector.java:117)
+	at org.eclipse.jetty.server.AbstractConnector$Acceptor.run(AbstractConnector.java:938)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+INFO  - 2014-07-22 17:10:20.900; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:10:21.930; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=740605477
+INFO  - 2014-07-22 17:10:21.930; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:10:31.904; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-22 17:10:31.935; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts at interval 0
+INFO  - 2014-07-22 17:10:31.935; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts\solr-jetty-context.xml
+INFO  - 2014-07-22 17:10:33.557; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-22 17:10:33.651; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-22 17:10:33.666; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-22 17:10:33.666; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr
+INFO  - 2014-07-22 17:10:33.666; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\'
+INFO  - 2014-07-22 17:10:33.822; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\solr.xml
+INFO  - 2014-07-22 17:10:33.963; org.apache.solr.core.CoreContainer; New CoreContainer 1874255686
+INFO  - 2014-07-22 17:10:33.963; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr\]
+INFO  - 2014-07-22 17:10:33.978; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-22 17:10:33.978; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: 
+INFO  - 2014-07-22 17:10:33.978; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-22 17:10:33.978; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-22 17:10:33.978; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-22 17:10:33.994; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-22 17:10:33.994; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-22 17:10:33.994; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-22 17:10:33.994; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-22 17:10:34.150; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-22 17:10:34.150; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-22 17:10:34.150; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-22 17:10:34.197; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\universities\'
+INFO  - 2014-07-22 17:10:34.275; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-07-22 17:10:34.400; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-07-22 17:10:34.415; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-07-22 17:10:34.415; org.apache.solr.schema.IndexSchema; [universities] Schema name=universities
+INFO  - 2014-07-22 17:10:34.478; org.apache.solr.schema.IndexSchema; default search field in schema is university_name
+INFO  - 2014-07-22 17:10:34.478; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-07-22 17:10:34.478; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-07-22 17:10:34.493; org.apache.solr.core.CoreContainer; Creating SolrCore 'universities' using configuration from instancedir solr\universities\
+INFO  - 2014-07-22 17:10:34.509; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-07-22 17:10:34.524; org.apache.solr.core.SolrCore; [universities] Opening new SolrCore at solr\universities\, dataDir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\
+INFO  - 2014-07-22 17:10:34.524; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: universities
+INFO  - 2014-07-22 17:10:34.540; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data
+INFO  - 2014-07-22 17:10:34.540; org.apache.solr.core.SolrCore; New index directory detected: old=null new=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index/
+INFO  - 2014-07-22 17:10:34.540; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index
+INFO  - 2014-07-22 17:10:34.618; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-07-22 17:10:34.634; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-07-22 17:10:34.634; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-07-22 17:10:34.634; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-07-22 17:10:34.649; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-07-22 17:10:34.649; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:10:34.649; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:10:34.649; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-07-22 17:10:34.649; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-07-22 17:10:34.665; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-07-22 17:10:34.680; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-07-22 17:10:34.696; org.apache.solr.update.CommitTracker; Hard AutoCommit: disabled
+INFO  - 2014-07-22 17:10:34.696; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-07-22 17:10:34.727; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index,segFN=segments_1,generation=1}
+INFO  - 2014-07-22 17:10:34.743; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 1
+INFO  - 2014-07-22 17:10:34.743; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@af6cd14[universities] main
+INFO  - 2014-07-22 17:10:34.758; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\conf
+INFO  - 2014-07-22 17:10:34.758; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr\universities\conf\}
+INFO  - 2014-07-22 17:10:34.774; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\conf
+WARN  - 2014-07-22 17:10:34.774; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-07-22 17:10:34.774; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-07-22 17:10:34.774; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-07-22 17:10:34.790; org.apache.solr.core.CoreContainer; registering core: universities
+INFO  - 2014-07-22 17:10:34.790; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@af6cd14[universities] main{StandardDirectoryReader(segments_1:1:nrt)}
+INFO  - 2014-07-22 17:10:34.790; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example
+INFO  - 2014-07-22 17:10:34.790; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-22 17:10:34.821; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:10:42.824; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=0 status=0 QTime=32 
+INFO  - 2014-07-22 17:29:40.035; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={optimize=true&fieldnames=id,university_name,city,state,university_nickname&commit=true&stream.contentType=application/csv&stream.file=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\external-data\Universities.txt&escape=\&separator=,} {add=[1000 (1474369347866591232), 1001 (1474369347948380160), 1002 (1474369347948380161), 1003 (1474369347948380162), 1004 (1474369347948380163), 1005 (1474369347948380164), 1006 (1474369347948380165), 1007 (1474369347948380166)]} 0 94
+ERROR - 2014-07-22 17:29:40.035; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: CSVLoader: input=file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/external-data/Universities.txt, line=8,expected 5 values but got 6
+	values={'1008','University at Albany',' State University of New York','Albany','NY','Great Danes',}
+	at org.apache.solr.handler.loader.CSVLoaderBase.input_err(CSVLoaderBase.java:303)
+	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:361)
+	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:31)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+INFO  - 2014-07-22 17:29:54.246; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:29:54.246; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:29:55.260; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1874255686
+INFO  - 2014-07-22 17:29:55.260; org.apache.solr.core.SolrCore; [universities]  CLOSING SolrCore org.apache.solr.core.SolrCore@48e266df
+INFO  - 2014-07-22 17:29:55.260; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=8,adds=8,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=8,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=0,transaction_logs_total_number=0}
+INFO  - 2014-07-22 17:29:55.260; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-07-22 17:29:55.260; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-07-22 17:29:55.276; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-07-22 17:29:55.276; org.apache.solr.update.DirectUpdateHandler2; Committing on IndexWriter close.
+INFO  - 2014-07-22 17:29:55.526; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index,segFN=segments_1,generation=1}
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index,segFN=segments_2,generation=2}
+INFO  - 2014-07-22 17:29:55.526; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 2
+INFO  - 2014-07-22 17:29:55.541; org.apache.solr.core.SolrCore; [universities] Closing main searcher on request.
+INFO  - 2014-07-22 17:29:55.541; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-07-22 17:29:55.541; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index;done=false>>]
+INFO  - 2014-07-22 17:29:55.541; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index
+INFO  - 2014-07-22 17:29:55.541; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data;done=false>>]
+INFO  - 2014-07-22 17:29:55.557; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data
+INFO  - 2014-07-22 17:29:55.557; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:29:58.792; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-22 17:29:58.808; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts at interval 0
+INFO  - 2014-07-22 17:29:58.824; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\contexts\solr-jetty-context.xml
+INFO  - 2014-07-22 17:30:00.446; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-22 17:30:00.540; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-22 17:30:00.555; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-22 17:30:00.555; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr
+INFO  - 2014-07-22 17:30:00.555; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\'
+INFO  - 2014-07-22 17:30:00.711; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\solr.xml
+INFO  - 2014-07-22 17:30:00.836; org.apache.solr.core.CoreContainer; New CoreContainer 480779844
+INFO  - 2014-07-22 17:30:00.836; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr\]
+INFO  - 2014-07-22 17:30:00.852; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-22 17:30:00.852; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: 
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-22 17:30:00.867; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-22 17:30:01.023; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-22 17:30:01.039; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-22 17:30:01.039; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-22 17:30:01.086; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\universities\'
+INFO  - 2014-07-22 17:30:01.164; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-07-22 17:30:01.288; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-07-22 17:30:01.304; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-07-22 17:30:01.320; org.apache.solr.schema.IndexSchema; [universities] Schema name=universities
+INFO  - 2014-07-22 17:30:01.366; org.apache.solr.schema.IndexSchema; default search field in schema is university_name
+INFO  - 2014-07-22 17:30:01.366; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-07-22 17:30:01.366; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-07-22 17:30:01.382; org.apache.solr.core.CoreContainer; Creating SolrCore 'universities' using configuration from instancedir solr\universities\
+INFO  - 2014-07-22 17:30:01.398; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-07-22 17:30:01.413; org.apache.solr.core.SolrCore; [universities] Opening new SolrCore at solr\universities\, dataDir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\
+INFO  - 2014-07-22 17:30:01.413; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: universities
+INFO  - 2014-07-22 17:30:01.429; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data
+INFO  - 2014-07-22 17:30:01.429; org.apache.solr.core.SolrCore; New index directory detected: old=null new=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index/
+INFO  - 2014-07-22 17:30:01.429; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index
+INFO  - 2014-07-22 17:30:01.522; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-07-22 17:30:01.522; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-07-22 17:30:01.522; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-07-22 17:30:01.522; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-07-22 17:30:01.538; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-07-22 17:30:01.538; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:30:01.538; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:30:01.538; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-07-22 17:30:01.538; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-07-22 17:30:01.554; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-07-22 17:30:01.569; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-07-22 17:30:01.585; org.apache.solr.update.CommitTracker; Hard AutoCommit: disabled
+INFO  - 2014-07-22 17:30:01.585; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-07-22 17:30:01.647; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index,segFN=segments_2,generation=2}
+INFO  - 2014-07-22 17:30:01.647; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 2
+INFO  - 2014-07-22 17:30:01.710; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@7c48fbf8[universities] main
+INFO  - 2014-07-22 17:30:01.710; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\conf
+INFO  - 2014-07-22 17:30:01.710; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr\universities\conf\}
+INFO  - 2014-07-22 17:30:01.725; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\conf
+WARN  - 2014-07-22 17:30:01.725; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-07-22 17:30:01.725; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-07-22 17:30:01.741; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-07-22 17:30:01.756; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@7c48fbf8[universities] main{StandardDirectoryReader(segments_2:3:nrt _0(4.9):C8)}
+INFO  - 2014-07-22 17:30:01.756; org.apache.solr.core.CoreContainer; registering core: universities
+INFO  - 2014-07-22 17:30:01.756; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example
+INFO  - 2014-07-22 17:30:01.756; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-22 17:30:01.788; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:30:32.239; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:30:32.239; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:30:33.268; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=480779844
+INFO  - 2014-07-22 17:30:33.268; org.apache.solr.core.SolrCore; [universities]  CLOSING SolrCore org.apache.solr.core.SolrCore@24ff5d3f
+INFO  - 2014-07-22 17:30:33.268; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=803,transaction_logs_total_number=1}
+INFO  - 2014-07-22 17:30:33.268; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-07-22 17:30:33.268; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-07-22 17:30:33.284; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-07-22 17:30:33.284; org.apache.solr.core.SolrCore; [universities] Closing main searcher on request.
+INFO  - 2014-07-22 17:30:33.284; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-07-22 17:30:33.284; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data;done=false>>]
+INFO  - 2014-07-22 17:30:33.284; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data
+INFO  - 2014-07-22 17:30:33.300; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index;done=false>>]
+INFO  - 2014-07-22 17:30:33.300; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\solr\universities\data\index
+INFO  - 2014-07-22 17:30:33.300; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0-Example/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example/webapps/solr.war
+INFO  - 2014-07-22 17:33:30.920; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-22 17:33:30.936; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts at interval 0
+INFO  - 2014-07-22 17:33:30.951; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts\solr-jetty-context.xml
+INFO  - 2014-07-22 17:33:32.574; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-22 17:33:32.652; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-22 17:33:32.667; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-22 17:33:32.667; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr
+INFO  - 2014-07-22 17:33:32.667; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\'
+INFO  - 2014-07-22 17:33:32.808; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\solr.xml
+INFO  - 2014-07-22 17:33:32.932; org.apache.solr.core.CoreContainer; New CoreContainer 566026257
+INFO  - 2014-07-22 17:33:32.948; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr\]
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: 
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-22 17:33:32.964; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-22 17:33:33.120; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-22 17:33:33.120; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-22 17:33:33.120; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-22 17:33:33.166; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\universities\'
+INFO  - 2014-07-22 17:33:33.229; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-07-22 17:33:33.354; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-07-22 17:33:33.369; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-07-22 17:33:33.385; org.apache.solr.schema.IndexSchema; [universities] Schema name=universities
+INFO  - 2014-07-22 17:33:33.447; org.apache.solr.schema.IndexSchema; default search field in schema is university_name
+INFO  - 2014-07-22 17:33:33.447; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-07-22 17:33:33.447; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-07-22 17:33:33.463; org.apache.solr.core.CoreContainer; Creating SolrCore 'universities' using configuration from instancedir solr\universities\
+INFO  - 2014-07-22 17:33:33.494; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-07-22 17:33:33.494; org.apache.solr.core.SolrCore; [universities] Opening new SolrCore at solr\universities\, dataDir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\
+INFO  - 2014-07-22 17:33:33.494; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: universities
+INFO  - 2014-07-22 17:33:33.510; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-22 17:33:33.510; org.apache.solr.core.SolrCore; New index directory detected: old=null new=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index/
+INFO  - 2014-07-22 17:33:33.525; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-22 17:33:33.603; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-07-22 17:33:33.603; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-07-22 17:33:33.619; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-07-22 17:33:33.619; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-07-22 17:33:33.619; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-07-22 17:33:33.619; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:33:33.619; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:33:33.634; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-07-22 17:33:33.634; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-07-22 17:33:33.634; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-07-22 17:33:33.650; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-07-22 17:33:33.681; org.apache.solr.update.CommitTracker; Hard AutoCommit: disabled
+INFO  - 2014-07-22 17:33:33.681; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-07-22 17:33:33.728; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_2,generation=2}
+INFO  - 2014-07-22 17:33:33.744; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 2
+INFO  - 2014-07-22 17:33:33.790; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@5f21d3e0[universities] main
+INFO  - 2014-07-22 17:33:33.790; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+INFO  - 2014-07-22 17:33:33.806; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr\universities\conf\}
+INFO  - 2014-07-22 17:33:33.806; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+WARN  - 2014-07-22 17:33:33.806; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-07-22 17:33:33.822; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-07-22 17:33:33.822; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-07-22 17:33:33.837; org.apache.solr.core.CoreContainer; registering core: universities
+INFO  - 2014-07-22 17:33:33.837; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@5f21d3e0[universities] main{StandardDirectoryReader(segments_2:3:nrt _0(4.9):C8)}
+INFO  - 2014-07-22 17:33:33.837; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0
+INFO  - 2014-07-22 17:33:33.837; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-22 17:33:33.868; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:33:54.913; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=8 status=0 QTime=31 
+INFO  - 2014-07-22 17:35:08.202; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@21d68af5[universities] realtime
+INFO  - 2014-07-22 17:35:08.202; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_2,generation=2}
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_3,generation=3}
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 3
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@39572fc0[universities] main
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@39572fc0[universities] main{StandardDirectoryReader(segments_2:5:nrt)}
+INFO  - 2014-07-22 17:35:08.327; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={stream.body=<delete><query>*:*</query></delete>&commit=true} {deleteByQuery=*:* (-1474369692007137280),commit=} 0 203
+INFO  - 2014-07-22 17:35:22.367; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=0 status=0 QTime=0 
+INFO  - 2014-07-22 17:35:28.388; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={optimize=true&fieldnames=id,university_name,city,state,university_nickname&commit=true&stream.contentType=application/csv&stream.file=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\external-data\Universities.txt&escape=\&separator=,} {} 0 15
+ERROR - 2014-07-22 17:35:28.388; org.apache.solr.common.SolrException; java.io.FileNotFoundException: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\external-data\Universities.txt (The system cannot find the path specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.solr.common.util.ContentStreamBase$FileStream.getStream(ContentStreamBase.java:132)
+	at org.apache.solr.common.util.ContentStreamBase.getReader(ContentStreamBase.java:193)
+	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:326)
+	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:31)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+ERROR - 2014-07-22 17:35:28.388; org.apache.solr.common.SolrException; null:java.io.FileNotFoundException: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0-Example\external-data\Universities.txt (The system cannot find the path specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.apache.solr.common.util.ContentStreamBase$FileStream.getStream(ContentStreamBase.java:132)
+	at org.apache.solr.common.util.ContentStreamBase.getReader(ContentStreamBase.java:193)
+	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:326)
+	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:31)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+INFO  - 2014-07-22 17:35:48.715; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={optimize=true&fieldnames=id,university_name,city,state,university_nickname&commit=true&stream.contentType=application/csv&stream.file=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\external-data\Universities.txt&escape=\&separator=,} {add=[1000 (1474369734488096768), 1001 (1474369734537379840), 1002 (1474369734537379841), 1003 (1474369734537379842), 1004 (1474369734537379843), 1005 (1474369734537379844), 1006 (1474369734537379845), 1007 (1474369734537379846)]} 0 62
+ERROR - 2014-07-22 17:35:48.715; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: CSVLoader: input=file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/external-data/Universities.txt, line=8,expected 5 values but got 6
+	values={'1008','University at Albany',' State University of New York','Albany','NY','Great Danes',}
+	at org.apache.solr.handler.loader.CSVLoaderBase.input_err(CSVLoaderBase.java:303)
+	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:361)
+	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:31)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+INFO  - 2014-07-22 17:37:10.133; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=0 status=0 QTime=0 
+INFO  - 2014-07-22 17:39:24.433; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={optimize=true&fieldnames=id,university_name,city,state,university_nickname&commit=true&stream.contentType=application/csv&stream.file=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\external-data\Universities.txt&escape=\&separator=,} {add=[??1 0 0 0  (1474369960734097408),  1 0 0 1  (1474369960734097409),  1 0 0 2  (1474369960734097410),  1 0 0 3  (1474369960734097411),  1 0 0 4  (1474369960734097412),  1 0 0 5  (1474369960734097413),  1 0 0 6  (1474369960734097414),  1 0 0 7  (1474369960734097415)]} 0 0
+ERROR - 2014-07-22 17:39:24.449; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: CSVLoader: input=file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/external-data/Universities.txt, line=8,expected 5 values but got 6
+	values={' 1 0 0 8 ',' U n i v e r s i t y   a t   A l b a n y ','   S t a t e   U n i v e r s i t y   o f   N e w   Y o r k ',' A l b a n y ',' N Y ',' G r e a t   D a n e s  ',}
+	at org.apache.solr.handler.loader.CSVLoaderBase.input_err(CSVLoaderBase.java:303)
+	at org.apache.solr.handler.loader.CSVLoaderBase.load(CSVLoaderBase.java:361)
+	at org.apache.solr.handler.loader.CSVLoader.load(CSVLoader.java:31)
+	at org.apache.solr.handler.UpdateRequestHandler$1.load(UpdateRequestHandler.java:92)
+	at org.apache.solr.handler.ContentStreamHandlerBase.handleRequestBody(ContentStreamHandlerBase.java:74)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+INFO  - 2014-07-22 17:46:00.708; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:46:00.708; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
+INFO  - 2014-07-22 17:46:01.738; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=566026257
+INFO  - 2014-07-22 17:46:01.738; org.apache.solr.core.SolrCore; [universities]  CLOSING SolrCore org.apache.solr.core.SolrCore@4ec74b34
+INFO  - 2014-07-22 17:46:01.738; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=1,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=16,adds=16,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=16,cumulative_deletesById=0,cumulative_deletesByQuery=1,cumulative_errors=0,transaction_logs_total_size=870,transaction_logs_total_number=2}
+INFO  - 2014-07-22 17:46:01.738; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-07-22 17:46:01.738; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-07-22 17:46:01.753; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-07-22 17:46:01.753; org.apache.solr.update.DirectUpdateHandler2; Committing on IndexWriter close.
+INFO  - 2014-07-22 17:46:01.987; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_3,generation=3}
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_4,generation=4}
+INFO  - 2014-07-22 17:46:02.003; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 4
+INFO  - 2014-07-22 17:46:02.003; org.apache.solr.core.SolrCore; [universities] Closing main searcher on request.
+INFO  - 2014-07-22 17:46:02.003; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-07-22 17:46:02.003; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data;done=false>>]
+INFO  - 2014-07-22 17:46:02.003; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-22 17:46:02.019; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index;done=false>>]
+INFO  - 2014-07-22 17:46:02.019; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-22 17:46:02.019; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
+INFO  - 2014-07-22 17:46:04.021; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-22 17:46:04.036; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts at interval 0
+INFO  - 2014-07-22 17:46:04.052; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts\solr-jetty-context.xml
+INFO  - 2014-07-22 17:46:05.721; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-22 17:46:05.799; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-22 17:46:05.815; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-22 17:46:05.815; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr
+INFO  - 2014-07-22 17:46:05.830; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\'
+INFO  - 2014-07-22 17:46:05.971; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\solr.xml
+INFO  - 2014-07-22 17:46:06.096; org.apache.solr.core.CoreContainer; New CoreContainer 1874255686
+INFO  - 2014-07-22 17:46:06.096; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr\]
+INFO  - 2014-07-22 17:46:06.111; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: 
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-22 17:46:06.127; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-22 17:46:06.142; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-22 17:46:06.142; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-22 17:46:06.298; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-22 17:46:06.298; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-22 17:46:06.298; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-22 17:46:06.361; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\universities\'
+INFO  - 2014-07-22 17:46:06.439; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-07-22 17:46:06.564; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-07-22 17:46:06.564; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-07-22 17:46:06.579; org.apache.solr.schema.IndexSchema; [universities] Schema name=universities
+INFO  - 2014-07-22 17:46:06.626; org.apache.solr.schema.IndexSchema; default search field in schema is university_name
+INFO  - 2014-07-22 17:46:06.642; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-07-22 17:46:06.642; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-07-22 17:46:06.657; org.apache.solr.core.CoreContainer; Creating SolrCore 'universities' using configuration from instancedir solr\universities\
+INFO  - 2014-07-22 17:46:06.673; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-07-22 17:46:06.673; org.apache.solr.core.SolrCore; [universities] Opening new SolrCore at solr\universities\, dataDir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\
+INFO  - 2014-07-22 17:46:06.673; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: universities
+INFO  - 2014-07-22 17:46:06.688; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-22 17:46:06.704; org.apache.solr.core.SolrCore; New index directory detected: old=null new=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index/
+INFO  - 2014-07-22 17:46:06.704; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-22 17:46:06.782; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-07-22 17:46:06.782; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-07-22 17:46:06.782; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-07-22 17:46:06.798; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-07-22 17:46:06.813; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-07-22 17:46:06.829; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-07-22 17:46:06.844; org.apache.solr.update.CommitTracker; Hard AutoCommit: disabled
+INFO  - 2014-07-22 17:46:06.844; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-07-22 17:46:06.907; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_4,generation=4}
+INFO  - 2014-07-22 17:46:06.907; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 4
+INFO  - 2014-07-22 17:46:06.954; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@6f28dc37[universities] main
+INFO  - 2014-07-22 17:46:06.969; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+INFO  - 2014-07-22 17:46:06.969; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr\universities\conf\}
+INFO  - 2014-07-22 17:46:06.985; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+WARN  - 2014-07-22 17:46:06.985; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-07-22 17:46:06.985; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-07-22 17:46:06.985; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-07-22 17:46:07.000; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@6f28dc37[universities] main{StandardDirectoryReader(segments_4:7:nrt _1(4.9):C16)}
+INFO  - 2014-07-22 17:46:07.000; org.apache.solr.core.CoreContainer; registering core: universities
+INFO  - 2014-07-22 17:46:07.000; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0
+INFO  - 2014-07-22 17:46:07.000; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-22 17:46:07.047; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:46:24.800; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@48046933[universities] realtime
+INFO  - 2014-07-22 17:46:24.800; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_4,generation=4}
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_5,generation=5}
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 5
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@7eb92bf5[universities] main
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@7eb92bf5[universities] main{StandardDirectoryReader(segments_4:9:nrt)}
+INFO  - 2014-07-22 17:46:24.894; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={stream.body=<delete><query>*:*</query></delete>&commit=true} {deleteByQuery=*:* (-1474370401455833088),commit=} 0 203
+INFO  - 2014-07-22 17:46:37.499; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=true,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-07-22 17:46:38.045; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_5,generation=5}
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_6,generation=6}
+INFO  - 2014-07-22 17:46:38.045; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 6
+INFO  - 2014-07-22 17:46:38.045; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@c70cb4c[universities] main
+INFO  - 2014-07-22 17:46:38.045; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@c70cb4c[universities] main{StandardDirectoryReader(segments_6:11:nrt _2(4.9):C749)}
+INFO  - 2014-07-22 17:46:38.045; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-07-22 17:46:38.060; org.apache.solr.update.processor.LogUpdateProcessor; [universities] webapp=/solr path=/update params={optimize=true&fieldnames=id,university_name,city,state,university_nickname&commit=true&stream.contentType=application/csv&stream.file=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\external-data\Universities.txt&escape=\&separator=|} {add=[1000 (1474370414476001280), 1001 (1474370414525284352), 1002 (1474370414525284353), 1003 (1474370414525284354), 1004 (1474370414525284355), 1005 (1474370414525284356), 1006 (1474370414542061568), 1007 (1474370414542061569), 1008 (1474370414542061570), 1009 (1474370414542061571), ... (749 adds)],optimize=} 0 905
+INFO  - 2014-07-22 17:46:57.981; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=749 status=0 QTime=15 
+INFO  - 2014-07-22 17:47:09.401; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*&rows=10000} hits=749 status=0 QTime=0 
+INFO  - 2014-07-22 17:49:11.502; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={facet=on&facet.mincount=1&facet.sort=index&q=*:*&facet.limit=-1&facet.field=university_name&rows=0} hits=749 status=0 QTime=31 
+ERROR - 2014-07-22 17:49:51.906; org.apache.solr.common.SolrException; org.apache.solr.common.SolrException: undefined field *
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1267)
+	at org.apache.solr.schema.IndexSchema.getFieldType(IndexSchema.java:1219)
+	at org.apache.solr.parser.SolrQueryParserBase.getWildcardQuery(SolrQueryParserBase.java:774)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:521)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:299)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:185)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:107)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:96)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:152)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:50)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:141)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:148)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:197)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1962)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:777)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:418)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:207)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:368)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+INFO  - 2014-07-22 17:49:51.906; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*fq%3Duniversity_name:t*} status=400 QTime=0 
+INFO  - 2014-07-22 17:50:07.787; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*&fq=university_name:t*} hits=0 status=0 QTime=0 
+INFO  - 2014-07-22 17:50:16.024; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*&fq=university_name:U*} hits=147 status=0 QTime=16 
+INFO  - 2014-07-22 17:51:10.717; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=749 status=0 QTime=0 
+INFO  - 2014-07-22 17:52:38.751; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-22 17:52:38.766; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=1874255686
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.core.SolrCore; [universities]  CLOSING SolrCore org.apache.solr.core.SolrCore@6466b46b
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=1,autocommits=0,soft autocommits=0,optimizes=1,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=749,cumulative_deletesById=0,cumulative_deletesByQuery=1,cumulative_errors=0,transaction_logs_total_size=66927,transaction_logs_total_number=1}
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-07-22 17:52:39.780; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.SolrCore; [universities] Closing main searcher on request.
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data;done=false>>]
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index;done=false>>]
+INFO  - 2014-07-22 17:52:39.796; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-22 17:52:39.812; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
+INFO  - 2014-07-23 09:00:58.534; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-07-23 09:00:58.565; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts at interval 0
+INFO  - 2014-07-23 09:00:58.565; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\contexts\solr-jetty-context.xml
+INFO  - 2014-07-23 09:00:59.954; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-07-23 09:01:00.032; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-07-23 09:01:00.048; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-07-23 09:01:00.048; org.apache.solr.core.SolrResourceLoader; using system property solr.solr.home: solr
+INFO  - 2014-07-23 09:01:00.048; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\'
+INFO  - 2014-07-23 09:01:00.188; org.apache.solr.core.ConfigSolr; Loading container configuration from C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\solr.xml
+INFO  - 2014-07-23 09:01:00.297; org.apache.solr.core.CoreContainer; New CoreContainer 480779844
+INFO  - 2014-07-23 09:01:00.313; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr\]
+INFO  - 2014-07-23 09:01:00.313; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-07-23 09:01:00.313; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: 
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-07-23 09:01:00.329; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-07-23 09:01:00.453; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-07-23 09:01:00.469; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-07-23 09:01:00.469; org.apache.solr.core.CoreContainer; Host Name: 
+INFO  - 2014-07-23 09:01:00.500; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr\universities\'
+INFO  - 2014-07-23 09:01:00.563; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_4_9
+INFO  - 2014-07-23 09:01:00.672; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-07-23 09:01:00.672; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-07-23 09:01:00.687; org.apache.solr.schema.IndexSchema; [universities] Schema name=universities
+INFO  - 2014-07-23 09:01:00.734; org.apache.solr.schema.IndexSchema; default search field in schema is university_name
+INFO  - 2014-07-23 09:01:00.734; org.apache.solr.schema.IndexSchema; query parser default operator is OR
+INFO  - 2014-07-23 09:01:00.734; org.apache.solr.schema.IndexSchema; unique key field: id
+INFO  - 2014-07-23 09:01:00.734; org.apache.solr.core.CoreContainer; Creating SolrCore 'universities' using configuration from instancedir solr\universities\
+INFO  - 2014-07-23 09:01:00.765; org.apache.solr.core.SolrCore; solr.StandardDirectoryFactory
+INFO  - 2014-07-23 09:01:00.765; org.apache.solr.core.SolrCore; [universities] Opening new SolrCore at solr\universities\, dataDir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\
+INFO  - 2014-07-23 09:01:00.765; org.apache.solr.core.SolrCore; JMX monitoring not detected for core: universities
+INFO  - 2014-07-23 09:01:00.781; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-23 09:01:00.781; org.apache.solr.core.SolrCore; New index directory detected: old=null new=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index/
+INFO  - 2014-07-23 09:01:00.781; org.apache.solr.core.CachingDirectoryFactory; return new directory for C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-23 09:01:00.859; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-07-23 09:01:00.859; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-07-23 09:01:00.859; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.ReplicationHandler
+INFO  - 2014-07-23 09:01:00.859; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-07-23 09:01:00.875; org.apache.solr.core.RequestHandlers; created standard: solr.StandardRequestHandler
+INFO  - 2014-07-23 09:01:00.875; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-23 09:01:00.875; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-07-23 09:01:00.875; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-07-23 09:01:00.875; org.apache.solr.core.RequestHandlers; created /admin/: org.apache.solr.handler.admin.AdminHandlers
+INFO  - 2014-07-23 09:01:00.890; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-07-23 09:01:00.906; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-07-23 09:01:00.921; org.apache.solr.update.CommitTracker; Hard AutoCommit: disabled
+INFO  - 2014-07-23 09:01:00.921; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-07-23 09:01:00.968; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index,segFN=segments_6,generation=6}
+INFO  - 2014-07-23 09:01:00.984; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 6
+INFO  - 2014-07-23 09:01:01.015; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@1b969687[universities] main
+INFO  - 2014-07-23 09:01:01.031; org.apache.solr.rest.ManagedResourceStorage$FileStorageIO; File-based storage initialized to use dir: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+INFO  - 2014-07-23 09:01:01.031; org.apache.solr.rest.RestManager; Initializing RestManager with initArgs: {storageDir=solr\universities\conf\}
+INFO  - 2014-07-23 09:01:01.031; org.apache.solr.rest.ManagedResourceStorage; Reading _rest_managed.json using file:dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\conf
+WARN  - 2014-07-23 09:01:01.031; org.apache.solr.rest.ManagedResource; No stored data found for /rest/managed
+WARN  - 2014-07-23 09:01:01.046; org.apache.solr.rest.ManagedResource; No registered observers for /rest/managed
+INFO  - 2014-07-23 09:01:01.046; org.apache.solr.rest.RestManager; Initializing 0 registered ManagedResources
+INFO  - 2014-07-23 09:01:01.046; org.apache.solr.core.SolrCore; [universities] Registered new searcher Searcher@1b969687[universities] main{StandardDirectoryReader(segments_6:11:nrt _2(4.9):C749)}
+INFO  - 2014-07-23 09:01:01.046; org.apache.solr.core.CoreContainer; registering core: universities
+INFO  - 2014-07-23 09:01:01.062; org.apache.solr.servlet.SolrDispatchFilter; user.dir=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0
+INFO  - 2014-07-23 09:01:01.062; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-07-23 09:01:01.078; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-23 09:01:08.723; org.apache.solr.core.SolrCore; [universities] webapp=/solr path=/select params={q=*:*} hits=749 status=0 QTime=15 
+INFO  - 2014-07-23 09:01:51.762; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-07-23 09:01:51.762; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=480779844
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.SolrCore; [universities]  CLOSING SolrCore org.apache.solr.core.SolrCore@170ee5f0
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.update.DirectUpdateHandler2; closing DirectUpdateHandler2{commits=0,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0,transaction_logs_total_size=66927,transaction_logs_total_number=1}
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.update.SolrCoreState; Closing SolrCoreState
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.update.DefaultSolrCoreState; SolrCoreState ref count has reached 0 - closing IndexWriter
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.update.DefaultSolrCoreState; closing IndexWriter with IndexWriterCloser
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.SolrCore; [universities] Closing main searcher on request.
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.CachingDirectoryFactory; Closing StandardDirectoryFactory - 2 directories currently being tracked
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data;done=false>>]
+INFO  - 2014-07-23 09:01:52.777; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data
+INFO  - 2014-07-23 09:01:52.792; org.apache.solr.core.CachingDirectoryFactory; looking to close C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index [CachedDir<<refCount=0;path=C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index;done=false>>]
+INFO  - 2014-07-23 09:01:52.792; org.apache.solr.core.CachingDirectoryFactory; Closing directory: C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0\solr\universities\data\index
+INFO  - 2014-07-23 09:01:52.792; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/C:/solr-4.9.0-UniversitySearch/UniversitySearch-Solr-4.9.0/solr-webapp/webapp/},C:\solr-4.9.0-UniversitySearch\UniversitySearch-Solr-4.9.0/webapps/solr.war
